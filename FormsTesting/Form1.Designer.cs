@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Events");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Users");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Events");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Users");
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.EventPage = new System.Windows.Forms.TabPage();
             this.label18 = new System.Windows.Forms.Label();
@@ -79,6 +79,10 @@
             this.EncryptedPassword = new System.Windows.Forms.TextBox();
             this.DiscordUsername = new System.Windows.Forms.TextBox();
             this.Username = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.EventEnd = new System.Windows.Forms.DateTimePicker();
+            this.label20 = new System.Windows.Forms.Label();
+            this.EventLocation = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.EventPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EventNumber)).BeginInit();
@@ -103,6 +107,10 @@
             // EventPage
             // 
             this.EventPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            this.EventPage.Controls.Add(this.label20);
+            this.EventPage.Controls.Add(this.EventLocation);
+            this.EventPage.Controls.Add(this.label19);
+            this.EventPage.Controls.Add(this.EventEnd);
             this.EventPage.Controls.Add(this.label18);
             this.EventPage.Controls.Add(this.EventDate);
             this.EventPage.Controls.Add(this.EventDelete);
@@ -138,7 +146,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.ForeColor = System.Drawing.Color.Silver;
-            this.label18.Location = new System.Drawing.Point(7, 580);
+            this.label18.Location = new System.Drawing.Point(7, 528);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(58, 13);
             this.label18.TabIndex = 22;
@@ -154,7 +162,7 @@
             this.EventDate.CalendarTrailingForeColor = System.Drawing.Color.Silver;
             this.EventDate.CustomFormat = "dd/MM/yyyy hh:mm tt";
             this.EventDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.EventDate.Location = new System.Drawing.Point(108, 580);
+            this.EventDate.Location = new System.Drawing.Point(108, 528);
             this.EventDate.Name = "EventDate";
             this.EventDate.Size = new System.Drawing.Size(313, 20);
             this.EventDate.TabIndex = 21;
@@ -184,10 +192,10 @@
             this.EventsList.ForeColor = System.Drawing.Color.Silver;
             this.EventsList.Location = new System.Drawing.Point(436, 5);
             this.EventsList.Name = "EventsList";
-            treeNode3.Name = "Events";
-            treeNode3.Text = "Events";
+            treeNode1.Name = "Events";
+            treeNode1.Text = "Events";
             this.EventsList.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode3});
+            treeNode1});
             this.EventsList.Size = new System.Drawing.Size(387, 628);
             this.EventsList.TabIndex = 3;
             this.EventsList.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.EventsList_AfterSelect);
@@ -241,7 +249,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.Silver;
-            this.label8.Location = new System.Drawing.Point(7, 552);
+            this.label8.Location = new System.Drawing.Point(7, 500);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(69, 13);
             this.label8.TabIndex = 16;
@@ -251,7 +259,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.Color.Silver;
-            this.label7.Location = new System.Drawing.Point(7, 526);
+            this.label7.Location = new System.Drawing.Point(7, 474);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(58, 13);
             this.label7.TabIndex = 15;
@@ -261,7 +269,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.Color.Silver;
-            this.label6.Location = new System.Drawing.Point(7, 350);
+            this.label6.Location = new System.Drawing.Point(7, 298);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(58, 13);
             this.label6.TabIndex = 14;
@@ -271,7 +279,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.Silver;
-            this.label5.Location = new System.Drawing.Point(7, 326);
+            this.label5.Location = new System.Drawing.Point(7, 274);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(94, 13);
             this.label5.TabIndex = 13;
@@ -281,7 +289,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.Silver;
-            this.label4.Location = new System.Drawing.Point(7, 299);
+            this.label4.Location = new System.Drawing.Point(7, 247);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(62, 13);
             this.label4.TabIndex = 12;
@@ -325,7 +333,7 @@
             this.EventLink.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.EventLink.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.EventLink.ForeColor = System.Drawing.Color.Silver;
-            this.EventLink.Location = new System.Drawing.Point(108, 526);
+            this.EventLink.Location = new System.Drawing.Point(108, 474);
             this.EventLink.Name = "EventLink";
             this.EventLink.Size = new System.Drawing.Size(313, 13);
             this.EventLink.TabIndex = 8;
@@ -338,7 +346,7 @@
             this.UserPings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.UserPings.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.UserPings.ForeColor = System.Drawing.Color.Silver;
-            this.UserPings.Location = new System.Drawing.Point(108, 350);
+            this.UserPings.Location = new System.Drawing.Point(108, 298);
             this.UserPings.Name = "UserPings";
             this.UserPings.Size = new System.Drawing.Size(313, 161);
             this.UserPings.TabIndex = 7;
@@ -353,7 +361,7 @@
             this.QuestCompatable.CheckState = System.Windows.Forms.CheckState.Checked;
             this.QuestCompatable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.QuestCompatable.ForeColor = System.Drawing.Color.Black;
-            this.QuestCompatable.Location = new System.Drawing.Point(108, 327);
+            this.QuestCompatable.Location = new System.Drawing.Point(108, 275);
             this.QuestCompatable.Name = "QuestCompatable";
             this.QuestCompatable.Size = new System.Drawing.Size(12, 11);
             this.QuestCompatable.TabIndex = 6;
@@ -369,7 +377,7 @@
             this.EventDescription.ForeColor = System.Drawing.Color.Silver;
             this.EventDescription.Location = new System.Drawing.Point(108, 57);
             this.EventDescription.Name = "EventDescription";
-            this.EventDescription.Size = new System.Drawing.Size(313, 236);
+            this.EventDescription.Size = new System.Drawing.Size(313, 176);
             this.EventDescription.TabIndex = 5;
             this.EventDescription.Text = "";
             this.EventDescription.TextChanged += new System.EventHandler(this.EventDescription_TextChanged);
@@ -412,7 +420,7 @@
             "Everyone",
             "PG13",
             "Adult"});
-            this.EventRating.Location = new System.Drawing.Point(108, 549);
+            this.EventRating.Location = new System.Drawing.Point(108, 497);
             this.EventRating.Name = "EventRating";
             this.EventRating.Size = new System.Drawing.Size(313, 21);
             this.EventRating.TabIndex = 2;
@@ -434,7 +442,7 @@
             "GuestGame",
             "Video",
             "Shop"});
-            this.EventType.Location = new System.Drawing.Point(108, 299);
+            this.EventType.Location = new System.Drawing.Point(108, 247);
             this.EventType.Name = "EventType";
             this.EventType.Size = new System.Drawing.Size(313, 21);
             this.EventType.TabIndex = 1;
@@ -482,10 +490,10 @@
             this.UsersList.ForeColor = System.Drawing.Color.Silver;
             this.UsersList.Location = new System.Drawing.Point(434, 6);
             this.UsersList.Name = "UsersList";
-            treeNode4.Name = "Users";
-            treeNode4.Text = "Users";
+            treeNode2.Name = "Users";
+            treeNode2.Text = "Users";
             this.UsersList.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode4});
+            treeNode2});
             this.UsersList.Size = new System.Drawing.Size(389, 631);
             this.UsersList.TabIndex = 4;
             this.UsersList.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.UsersList_AfterSelect);
@@ -766,6 +774,55 @@
             this.Username.TabIndex = 0;
             this.Username.TextChanged += new System.EventHandler(this.Username_TextChanged);
             // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.ForeColor = System.Drawing.Color.Silver;
+            this.label19.Location = new System.Drawing.Point(7, 554);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(54, 13);
+            this.label19.TabIndex = 26;
+            this.label19.Text = "EventEnd";
+            // 
+            // EventEnd
+            // 
+            this.EventEnd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.EventEnd.CalendarForeColor = System.Drawing.Color.Silver;
+            this.EventEnd.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.EventEnd.CalendarTitleForeColor = System.Drawing.Color.Silver;
+            this.EventEnd.CalendarTrailingForeColor = System.Drawing.Color.Silver;
+            this.EventEnd.CustomFormat = "dd/MM/yyyy hh:mm tt";
+            this.EventEnd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.EventEnd.Location = new System.Drawing.Point(108, 554);
+            this.EventEnd.Name = "EventEnd";
+            this.EventEnd.Size = new System.Drawing.Size(313, 20);
+            this.EventEnd.TabIndex = 25;
+            this.EventEnd.ValueChanged += new System.EventHandler(this.EventEnd_ValueChanged);
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.ForeColor = System.Drawing.Color.Silver;
+            this.label20.Location = new System.Drawing.Point(7, 583);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(79, 13);
+            this.label20.TabIndex = 28;
+            this.label20.Text = "Event Location";
+            // 
+            // EventLocation
+            // 
+            this.EventLocation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.EventLocation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.EventLocation.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.EventLocation.ForeColor = System.Drawing.Color.Silver;
+            this.EventLocation.Location = new System.Drawing.Point(108, 583);
+            this.EventLocation.Name = "EventLocation";
+            this.EventLocation.Size = new System.Drawing.Size(313, 13);
+            this.EventLocation.TabIndex = 27;
+            this.EventLocation.TextChanged += new System.EventHandler(this.EventLocation_TextChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -839,6 +896,10 @@
         private System.Windows.Forms.Button UserCreate;
         private System.Windows.Forms.DateTimePicker EventDate;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.DateTimePicker EventEnd;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox EventLocation;
     }
 }
 

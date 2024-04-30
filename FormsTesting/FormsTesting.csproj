@@ -85,9 +85,8 @@
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="System.Windows.Forms" />
-    <Reference Include="TECDataClasses_Framework, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\TECDataClasses_Framework\TECDataClasses_Framework\bin\Release\TECDataClasses_Framework.dll</HintPath>
+    <Reference Include="TECDataClasses_Framework">
+      <HintPath>..\..\Built\TECDataClasses_Framework.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

@@ -80,7 +80,9 @@ namespace FormsTesting
                     JsonConvert.SerializeObject(UserPings.Lines),
                     EventLink.Text,
                     (EventRating)EventRating.SelectedIndex, 
-                    EventDate.Value);
+                    EventDate.Value,
+                    EventEnd.Value,
+                    EventLocation.Text);
                 ss.WriteString(JsonConvert.SerializeObject(_event));
                 if (ss.ReadString() != "SUCCESS") { throw new Exception("Server Error"); }
 
@@ -94,6 +96,7 @@ namespace FormsTesting
                 UserPings.Text = "";
                 EventLink.Text = "";
                 EventRating.SelectedIndex = 0;
+                EventLocation.Text = "";
 
                 EventRead_Click(sender, e);
                 eventUnsavedChanges = false;
@@ -132,6 +135,8 @@ namespace FormsTesting
                 TreeNode link        = new TreeNode(_event.EventLink);
                 TreeNode rating      = new TreeNode(JsonConvert.SerializeObject(_event.EventRating));
                 TreeNode date        = new TreeNode(_event.EventDate.ToString("dd/MM/yyyy hh:mm tt"));
+                TreeNode end         = new TreeNode(_event.EventEnd.ToString("dd/MM/yyyy hh:mm tt"));
+                TreeNode location    = new TreeNode(_event.EventLocation);
 
                 foreach (string ping in JsonConvert.DeserializeObject<string[]>(_event.UserPings))
                 {
@@ -147,6 +152,8 @@ namespace FormsTesting
                 number.Nodes.Add(new TreeNode("EventLink",        new TreeNode[] { link         }));
                 number.Nodes.Add(new TreeNode("EventRating",      new TreeNode[] { rating       }));
                 number.Nodes.Add(new TreeNode("EventDate",        new TreeNode[] { date         }));
+                number.Nodes.Add(new TreeNode("EventEnd",         new TreeNode[] { end          }));
+                number.Nodes.Add(new TreeNode("EventLocation",    new TreeNode[] { location     }));
 
                 eventTree.Nodes.Add(number);
             }
@@ -184,7 +191,9 @@ namespace FormsTesting
                 JsonConvert.SerializeObject(UserPings.Lines),
                 EventLink.Text,
                 (EventRating)EventRating.SelectedIndex,
-                EventDate.Value);
+                EventDate.Value,
+                EventEnd.Value,
+                EventLocation.Text);
             ss.WriteString(JsonConvert.SerializeObject(_event));
             if (ss.ReadString() != "SUCCESS") { throw new Exception("Server Error"); }
 
@@ -198,6 +207,7 @@ namespace FormsTesting
             UserPings.Text = "";
             EventLink.Text = "";
             EventRating.SelectedIndex = 0;
+            EventLocation.Text = "";
 
             EventRead_Click(sender, e);
             eventUnsavedChanges = false;
@@ -226,7 +236,9 @@ namespace FormsTesting
                 JsonConvert.SerializeObject(UserPings.Lines),
                 EventLink.Text,
                 (EventRating)EventRating.SelectedIndex,
-                EventDate.Value);
+                EventDate.Value,
+                EventEnd.Value,
+                EventLocation.Text);
             ss.WriteString(JsonConvert.SerializeObject(_event));
             if (ss.ReadString() != "SUCCESS") { throw new Exception("Server Error"); }
 
@@ -240,6 +252,7 @@ namespace FormsTesting
             UserPings.Text = "";
             EventLink.Text = "";
             EventRating.SelectedIndex = 0;
+            EventLocation.Text = "";
 
             EventRead_Click(sender, e);
             eventUnsavedChanges = false;
@@ -468,6 +481,8 @@ namespace FormsTesting
             TreeNode link        = nodes[5].Nodes[0];
             TreeNode rating      = nodes[6].Nodes[0];
             TreeNode date        = nodes[7].Nodes[0];
+            TreeNode end         = nodes[8].Nodes[0];
+            TreeNode location    = nodes[9].Nodes[0];
 
             string[] pinglist = new string[pings.Nodes.Count];
             int i = 0;
@@ -486,6 +501,8 @@ namespace FormsTesting
             EventLink.Text = link.Text;
             EventRating.SelectedIndex = (int)JsonConvert.DeserializeObject<EventRating>(rating.Text);
             EventDate.Value = DateTime.ParseExact(date.Text, "dd/MM/yyyy hh:mm tt", null);
+            EventEnd.Value = DateTime.ParseExact(end.Text, "dd/MM/yyyy hh:mm tt", null);
+            EventLocation.Text = location.Text;
 
             eventUnsavedChanges = false;
         }
@@ -574,6 +591,16 @@ namespace FormsTesting
         private void EventDate_ValueChanged(object sender, EventArgs e)
         {
             userUnsavedChanges = true;
+        }
+
+        private void EventEnd_ValueChanged(object sender, EventArgs e)
+        {
+            userUnsavedChanges = true;
+        }
+
+        private void EventLocation_TextChanged(object sender, EventArgs e)
+        {
+            eventUnsavedChanges = true;
         }
         #endregion
 
